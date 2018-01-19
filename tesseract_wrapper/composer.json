@@ -1,0 +1,27 @@
+{
+    "name": "nkkollaw/tesseract-ocr-php",
+    "description": "A wrapper to work with Tesseract OCR inside PHP, forked from thiagoalessio/tesseract-ocr-for-php",
+    "version": "0.1.0",
+    "type": "library",
+    "keywords": ["Tesseract", "OCR", "text recognition"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Niccolo Brogi",
+            "email": "me@nbrogi.com",
+            "homepage": "http://nbrogi.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/nkkollaw/tesseract-ocr-php/issues",
+        "irc": "",
+        "source": "https://github.com/nkkollaw/tesseract-ocr-php"
+    },
+    "require-dev": {
+    },
+	"autoload": {
+        "psr-0" : {
+            "nkkollaw\\TesseractOCR" : "src"
+        }
+    }
+}

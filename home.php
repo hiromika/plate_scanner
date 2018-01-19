@@ -34,6 +34,7 @@
     <script src="assets/js/jquery-2.2.3.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/dataTables.bootstrap.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
   </head>
 <body>
 
@@ -66,16 +67,14 @@ require_once 'koneksi.php';
         <div class="admin-menu">
           <ul id="side-admin-menu" class="side-menu list-unstyled"> 
             <li> <a href="home.php?link=dashboard"> <i class="icon-home"> </i><span>Dashboard</span></a></li>
-            <li> <a href="#"> <i class="icon-screen"> </i><span>More</span>
-                <div class="badge badge-info">Special</div></a></li>
             <li> <a href="#pages-nav-list" data-toggle="collapse" aria-expanded="false"><i class="icon-interface-windows"></i><span>Master</span>
                 <div class="arrow pull-right"><i class="fa fa-angle-down"></i></div></a>
               <ul id="pages-nav-list" class="collapse list-unstyled">
-                <li> <a href="home.php?link=m_users">Users</a></li>
-                <li> <a href="#">Page 2</a></li>
-                <li> <a href="#">Page 3</a></li>
+                <li> <a href="home.php?link=m_login">User</a></li>
+                <li> <a href="home.php?link=m_users">Data Pengendara</a></li>
               </ul>
             </li>
+            <li> <a href="home.php?link=m_parkir"> <i class="icon-home"> </i><span>Histori Parkir</span></a></li>
           </ul>
         </div>
       </div>
@@ -117,6 +116,12 @@ require_once 'koneksi.php';
         		case 'm_users':
         			include 'm_users.php';
         			break;
+            case 'm_login':
+              include 'login_manage.php';
+              break;
+            case 'm_parkir':
+              include 'parkir_manage.php';
+              break;
         		default:
         			# code...
         			break;
@@ -132,7 +137,7 @@ require_once 'koneksi.php';
     <script src="assets/js/jquery-2.2.3.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/dataTables.bootstrap.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    
     <script src="assets/vendor/jquery.cookie/jquery.cookie.js"> </script>
     <script src="assets/js/grasp_mobile_progress_circle-1.0.0.min.js"></script>
     <script src="assets/vendor/jquery-validation/jquery.validate.min.js"></script>
@@ -140,13 +145,6 @@ require_once 'koneksi.php';
     <script src="assets/js/front.js"></script>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.-->
     <!---->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
+
 </body>
 </html>

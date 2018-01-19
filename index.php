@@ -53,7 +53,7 @@
       <div class="container">
         <div class="form-outer text-center d-flex align-items-center" style="max-width: 380px !important;">
           <div class="form-inner" style="    padding: 40px !important;">
-            <div class="logo text-uppercase"><span>Login</span><strong class="text-primary">Dashboard</strong></div>
+            <div class="logo text-uppercase"><span>PLATE</span><strong class="text-primary">SCANNER</strong></div>
            <?php
             if(isset($error))
             {
@@ -79,7 +79,7 @@
           </div>
 
           <div class="copyrights text-center">
-            <p>Design by <a href="" class="external"></a></p>
+            <p><a href="" class="external"></a></p>
             <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
           </div>
         </div>

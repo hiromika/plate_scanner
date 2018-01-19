@@ -37,6 +37,26 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["file"]["name"]). " has been uploaded.";
+
+        $connect = mysqli_connect('localhost','root','','db_pro');
+
+        $waktu = date('Y-m-d H:i:s');
+
+        $json_data = exec('\openalpr_64\alpr -c id -p id '.$target_file.' -j -n 5');
+        $data = json_decode($json_data,true);
+
+        $plat = '';
+        $rate = '';
+
+        if(count($data['results'])>0){
+            $plat = $data['results'][0]['plate'];
+            $rate = $data['results'][0]['confidence'];
+        }
+        
+
+        $query = "INSERT INTO tb_parkir VALUES ('','$plat','$rate','$target_file','$waktu')";
+        $sql = mysqli_query($connect,$query);
+
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
