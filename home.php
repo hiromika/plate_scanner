@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="assets/css/custom.css">
     <!-- datables -->
     <link rel="stylesheet" href="assets/css/jquery.dataTables.css">
+
+    <link rel="stylesheet" href="assets/fancybox/jquery.fancybox-1.3.4.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="assets/favicon.png">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
@@ -32,9 +34,15 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 
     <script src="assets/js/jquery-2.2.3.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.4.1.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/dataTables.bootstrap.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+    !window.jQuery && document.write('<script src="assets/fancybox/jquery-1.4.3.min.js"><\/script>');
+    </script>
+    <script src="assets/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+    <script src="assets/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
   </head>
 <body>
 
@@ -59,9 +67,9 @@ require_once 'koneksi.php';
       <div class="side-navbar-wrapper">
         <div class="sidenav-header d-flex align-items-center justify-content-center">
           <div class="sidenav-header-inner text-center"><!-- <img src="img/avatar-1.jpg" alt="person" class="img-fluid rounded-circle"> -->
-            <h2 class="h5 text-uppercase">Anderson Hardy</h2><span class="text-uppercase">Web Developer</span>
+            <h2 class="h5 text-uppercase"><?php echo $ses['username'];  ?></h2><!-- <span class="text-uppercase">Web Developer</span> -->
           </div>
-          <div class="sidenav-header-logo"><a href="index.html" class="brand-small text-center"> <strong>B</strong><strong class="text-primary">D</strong></a></div>
+          <div class="sidenav-header-logo"><a href="index.html" class="brand-small text-center"> <strong>P</strong><strong class="text-primary">T</strong></a></div>
         </div>
  
         <div class="admin-menu">
@@ -86,7 +94,7 @@ require_once 'koneksi.php';
           <div class="container-fluid" style="padding-left: 20px !important;">
             <div class="navbar-holder d-flex align-items-center justify-content-between">
               <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn"><i class="icon-bars"> </i></a>
-              <a href="index.html" class="navbar-brand">
+              <a href="#" class="navbar-brand">
                   <div class="brand-text d-none d-md-inline-block">
                   <strong class="text-primary">Welcome</strong>
                   </div>
@@ -135,8 +143,10 @@ require_once 'koneksi.php';
 
    <!-- Javascript files-->
     <script src="assets/js/jquery-2.2.3.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.4.1.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/dataTables.bootstrap.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
     
     <script src="assets/vendor/jquery.cookie/jquery.cookie.js"> </script>
     <script src="assets/js/grasp_mobile_progress_circle-1.0.0.min.js"></script>

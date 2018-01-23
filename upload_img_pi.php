@@ -42,7 +42,7 @@ if ($uploadOk == 0) {
 
         $waktu = date('Y-m-d H:i:s');
 
-        $json_data = exec('\openalpr_64\alpr -c id -p id '.$target_file.' -j -n 5');
+        $json_data = exec('openalpr_64\alpr -c id -p id '.$target_file.' -j -n 5');
         $data = json_decode($json_data,true);
 
         $plat = '';

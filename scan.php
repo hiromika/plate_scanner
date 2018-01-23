@@ -11,7 +11,7 @@
 	// echo $tesseract->recognize();
 	
 
-	$json_data = exec('\openalpr_64\alpr -c id -p id openalpr_64\samples\plat.jpg -j -n 5');
+	$json_data = exec('openalpr_64\alpr -c id -p id openalpr_64\samples\plat.jpg -j -n 5');
 	$data = json_decode($json_data,true);
 
 	print_r($data);
