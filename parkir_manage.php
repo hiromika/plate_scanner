@@ -1,5 +1,6 @@
 <div class="col-md-12">
-<!-- Button to Open the Modal -->
+<a href="change_status_gerbang.php" class="btn btn-sm btn-info">Buka / Tutup Gerbang</a>
+
 <hr>
 
 	<table class="table table-bordered" id="tb_users">
