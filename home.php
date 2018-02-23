@@ -82,7 +82,8 @@ require_once 'koneksi.php';
                 <li> <a href="home.php?link=m_users">Data Pengendara</a></li>
               </ul>
             </li>
-            <li> <a href="home.php?link=m_parkir"> <i class="icon-home"> </i><span>Histori Parkir</span></a></li>
+            <li> <a href="home.php?link=m_parkir"> <i class="fa fa-arrow-right"> </i><span>Histori Parkir Masuk</span></a></li>
+            <li> <a href="home.php?link=m_parkir_k"> <i class="fa fa-arrow-left"> </i><span>Histori Parkir Keluar</span></a></li>
           </ul>
         </div>
       </div>
@@ -129,6 +130,9 @@ require_once 'koneksi.php';
               break;
             case 'm_parkir':
               include 'parkir_manage.php';
+              break;
+            case 'm_parkir_k':
+              include 'parkir_manage_k.php';
               break;
         		default:
         			# code...

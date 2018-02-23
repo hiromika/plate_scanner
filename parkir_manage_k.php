@@ -1,12 +1,12 @@
 <div class="col-md-12">
 
 <h2>
-	Histori Parkir Masuk
+	Histori Parkir Keluar
 </h2>
 
 <hr>
 
-<a href="change_status_gerbang.php?ig=1" class="btn btn-sm btn-info">Buka / Tutup Gerbang</a>
+<a href="change_status_gerbang.php?ig=2" class="btn btn-sm btn-info">Buka / Tutup Gerbang</a>
 
 <hr>
 
@@ -128,7 +128,7 @@
 		tbl= $('#tb_users').DataTable( {
 			bJQueryUI: true,
 			sPaginationType: "full_numbers",
-		    "ajax" : "parkir_process.php?action=get",
+		    "ajax" : "parkir_process_k.php?action=get",
 		    select: {
 		        style: 'multi+shift',
 		    },
@@ -210,7 +210,7 @@
 
 	function editData(){
 		$.ajax({
-		    url: 'parkir_process.php',
+		    url: 'parkir_process_k.php',
 		    type: 'POST',
 		    data: {
 		        no_plat: $('#no_plat').val(),
@@ -231,7 +231,7 @@
 
 	function detail(no_p){
 		$.ajax({
-			url: 'parkir_process.php',
+			url: 'parkir_process_k.php',
 			type: 'POST',
 			data: {
 				action:'detail',

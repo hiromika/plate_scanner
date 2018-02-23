@@ -7,7 +7,7 @@
 
 		if($_GET['action']=='get'){
 
-			$query = "SELECT a.*, b.user_name, b.user_id FROM tb_parkir a LEFT JOIN tb_user b ON a.nomor_plat = b.user_plate_number WHERE status_parkir='1'";
+			$query = "SELECT a.*, b.user_name, b.user_id FROM tb_parkir a LEFT JOIN tb_user b ON a.nomor_plat = b.user_plate_number WHERE status_parkir='2'";
 
 			$sql = mysqli_query($connect,$query);
 

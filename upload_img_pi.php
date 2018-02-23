@@ -40,6 +40,8 @@ if ($uploadOk == 0) {
 
         $connect = mysqli_connect('localhost','root','','db_pro');
 
+        $ig = $_GET['ig'];
+
         $waktu = date('Y-m-d H:i:s');
 
         $json_data = exec('openalpr_64\alpr -c id -p id '.$target_file.' -j -n 5');
@@ -52,10 +54,20 @@ if ($uploadOk == 0) {
             $plat = $data['results'][0]['plate'];
             $rate = $data['results'][0]['confidence'];
         }
-        
 
-        $query = "INSERT INTO tb_parkir VALUES ('','$plat','$rate','$target_file','$waktu')";
+
+        $query = "INSERT INTO tb_parkir VALUES ('','$plat','$rate','$target_file','$waktu','$ig')";
         $sql = mysqli_query($connect,$query);
+
+        $query = "SELECT * FROM tb_user WHERE user_plate_number='$plat' LIMIT 1";
+        $sql = mysqli_query($connect,$query);
+
+        $num = mysqli_num_rows($sql);
+
+        if($num>0){
+          include "change_status_gate.php";
+        }
+
 
     } else {
         echo "Sorry, there was an error uploading your file.";
